@@ -1,0 +1,79 @@
+# ==============================================================================
+# AI / MACHINE LEARNING / DATA SCIENCE TEMPLATE
+# ==============================================================================
+
+# --- Data & Datasets ---
+# Block heavy source data and processed formats
+data/
+datasets/
+*.csv
+*.tsv
+*.jsonl
+*.parquet
+*.feather
+*.hdf5
+*.h5
+*.sql
+*.db
+*.sqlite
+
+# --- AI Models, Weights, and Checkpoints ---
+# Never commit massive binary files or training weights
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.pkl
+*.pickle
+*.pb
+*.tflite
+*.h5
+*.joblib
+*.gguf
+*.safetensors
+models/
+checkpoints/
+weights/
+
+# --- Large Language Model (LLM) & Agent Artifacts ---
+# Exclude local vector databases, indexes, and AI assistant logs
+.chroma/
+.pinecone/
+faiss_index/
+*.log
+logs/
+.cursorrules
+.cursor/
+.promptflow/
+ai_output/
+
+# --- Environment & API Keys ---
+# Protect OpenAI, Anthropic, HuggingFace, and cloud secrets
+.env
+.env.local
+.env.*
+secrets/
+*.pem
+
+# --- Virtual Environments (Python-centric) ---
+# Ignore local packages and dependencies
+.venv/
+venv/
+env/
+ENV/
+build/
+dist/
+*.egg-info/
+__pycache__/
+*.pyc
+
+# --- Jupyter Notebooks Checklist ---
+# Keep notebooks but ignore auto-saved checkpoints and hidden states
+.ipynb_checkpoints/
+.virtual_documents/
+
+# --- OS & IDE Junk ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
