@@ -1,5 +1,3 @@
-
-import os
 from supabase import create_client, Client
 from app.config import SUPABASE_SERVICE_ROLE_KEY,SUPABASE_URL
 
