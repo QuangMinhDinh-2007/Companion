@@ -3,7 +3,7 @@ test_safety.py — Verifies the crisis detection logic in app/core/safety.py
 behaves correctly. Run with: pytest tests/
 """
 
-from app.core.safety import check_for_crisis, get_crisis_response
+from app.core.safety import check_for_crisis, get_crisis_response, CRISIS_HOTLINES
 
 def test_detects_crisis():
     assert check_for_crisis("I want to kill myself") == True
@@ -19,4 +19,4 @@ def test_empty_message():
 
 def test_crisis_response_has_hotline():
     response = get_crisis_response()
-    assert "1800" in response
+    assert any(num in response for num in CRISIS_HOTLINES.values())

@@ -2,7 +2,7 @@
 from unittest.mock import patch, MagicMock
 from app.core.companion import get_response
 
-@patch("core.chat.client")
+@patch("app.core.companion.client")
 def test_get_response_returns_reply(mock_client):
     fake = MagicMock()
     fake.content = [MagicMock(text="I hear you. That sounds hard.")]
