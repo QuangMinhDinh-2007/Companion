@@ -1,8 +1,3 @@
-"""
-supabase.py — Creates one shared connection to your Supabase database.
-Every other file that needs the database imports get_db() from here,
-instead of each creating its own connection.
-"""
 
 import os
 from supabase import create_client, Client
