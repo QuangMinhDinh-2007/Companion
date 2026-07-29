@@ -31,7 +31,6 @@ datasets/
 *.joblib
 *.gguf
 *.safetensors
-models/
 checkpoints/
 weights/
 
