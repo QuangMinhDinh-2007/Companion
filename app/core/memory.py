@@ -16,6 +16,6 @@ def build_context(chat_history: list[dict]) -> list[dict]:
         total_chars += len(msg["content"])
         if total_chars > budget:
             break
-        trimmed.append(msg)
+        trimmed.append({"role": msg["role"], "content": msg["content"]})
 
     return list(reversed(trimmed))        # back to chronological order

@@ -16,8 +16,10 @@ def get_classifier():
 def detect_emotion(message: str) -> str:
     """Returns the dominant emotion label, e.g. 'sadness', 'joy', 'fear'."""
     try:
-        classifier = get_classifier()
-        result = classifier(message)
-        return result[0][0]["label"]
+        result = get_classifier()(message)
+        top = result[0]
+        if isinstance(top,list):
+            top = top[0]
+        return top["label"]
     except Exception:
         return "neutral"

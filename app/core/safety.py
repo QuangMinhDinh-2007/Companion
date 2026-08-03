@@ -13,14 +13,14 @@ CRISIS_HOTLINES = {
     "emergency": "115",
 }
 
-CRISIS_RESPONSE = """
-    I hear you, and I'm really glad you're talking to me right now.\n"
-    "What you're feeling sounds incredibly heavy, and you don't have to carry it alone.\n\n"
-    "Please reach out to someone who can be with you right now:\n"
-    "• National Suicide Prevention Hotline (24/7): 1900 2546\n"
-    "• Blue Dragon youth support (Mon–Fri, 9am–6pm): 1800 1567\n"
-    "• If you're in immediate danger, call 115 (emergency).\n\n"
-    "I'm still here with you. Can you tell me what's happening right now?"""
+CRISIS_RESPONSE = """"I hear you, and I'm really glad you're talking to me right now.
+What you're feeling sounds incredibly heavy, and you don't have to carry it alone.
+Please reach out to someone who can be with you right now:
+- National Suicide Prevention Hotline (24/7): 1900 2546
+- Blue Dragon youth support (Mon–Fri, 9am–6pm): 1800 1567
+- If you're in immediate danger, call 115 (emergency).
+
+I'm still here with you. Can you tell me what's happening right now?"""
 
 def check_for_crisis(message: str) -> bool:
     """Returns True if the message contains crisis signals."""

@@ -1,8 +1,3 @@
-"""
-test_safety.py — Verifies the crisis detection logic in app/core/safety.py
-behaves correctly. Run with: pytest tests/
-"""
-
 from app.core.safety import check_for_crisis, get_crisis_response, CRISIS_HOTLINES
 
 def test_detects_crisis():

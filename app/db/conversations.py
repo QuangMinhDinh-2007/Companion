@@ -19,6 +19,5 @@ def get_history(user_id: str, limit: int = 20) -> list[dict]:
         .order("created_at", desc=True)
         .limit(limit)
         .execute()
-        .select("role, content, emotion")
     )
     return list(reversed(result.data))
