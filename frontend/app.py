@@ -15,6 +15,10 @@ st.set_page_config(page_title="Companion AI", page_icon="💬")
 st.title("Companion AI")
 st.caption("A safe space to be heard.")
 
+DEFAULTS = {"session": None, "messages": []}
+for key, value in DEFAULTS.items():
+    st.session_state.setdefault(key, value)
+
 if st.session_state.session is None:
     tab_login, tab_signup = st.tabs(["Log in", "Sign up"])
     with tab_login:
@@ -40,9 +44,6 @@ if st.session_state.session is None:
 
 token = st.session_state.session.access_token
 
-if "messages" not in st.session_state:
-    st.session_state.messages = []
-
 for msg in st.session_state.messages:
     with st.chat_message(msg["role"]):
         st.write(msg["content"])
@@ -60,8 +61,12 @@ if user_input:
                     json={"message": user_input},
                     headers={"Authorization" : f"Bearer {token}"},
                     timeout=60)
+                if response.status_code in (401,403):
+                    st.session_state.session = None
+                    st.rerun()
+                response.raise_for_status()
                 reply = response.json()["reply"]
-            except Exception as e:
+            except Exception:
                 reply = "Sorry, something went wrong. Please try again."
 
         st.write(reply)

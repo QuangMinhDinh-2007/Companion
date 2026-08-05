@@ -1,4 +1,5 @@
 
+import torch
 from transformers import pipeline
 
 _emotion_classifier = None
@@ -9,7 +10,10 @@ def get_classifier():
         _emotion_classifier = pipeline(
             "text-classification",
             model="bhadresh-savani/distilbert-base-uncased-emotion",
-            top_k=1
+            top_k=1,
+            device=0 if torch.cuda.is_available() else -1,
+            truncation=True,
+            max_length=512,
         )
     return _emotion_classifier
 

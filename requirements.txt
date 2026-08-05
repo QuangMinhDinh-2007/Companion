@@ -1,10 +1,11 @@
+--extra-index-url https://download.pytorch.org/whl/cpu
 fastapi
 uvicorn
 anthropic
 langchain
 langchain-anthropic
 transformers
-torch
+torch==2.13.0
 supabase
 python-dotenv
 streamlit
